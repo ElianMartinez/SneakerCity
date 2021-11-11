@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 // material
 import { experimentalStyled as styled } from "@material-ui/core/styles";
 //
@@ -28,10 +27,6 @@ const MainStyle = styled("div")(({ theme }) => ({
 }));
 
 // ----------------------------------------------------------------------
-
-DashboardLayout.propTypes = {
-  children: PropTypes.node,
-};
 
 export default function HomeLayout({ children }) {
   return (

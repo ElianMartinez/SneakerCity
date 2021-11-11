@@ -44,8 +44,7 @@ export default function HomeNavbar() {
             sx={{ mr: 1, color: "text.primary" }}
           ></IconButton>
         </Hidden>
-
-        <Searchbar />
+        
         <Box sx={{ flexGrow: 1 }} />
 
         <Box
