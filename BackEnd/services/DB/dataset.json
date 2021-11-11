@@ -1,0 +1,216 @@
+{
+  "product": [
+    {
+    "id":2056545,
+      "marca": "Nike",
+      "modelo": "ZoomX SuperRep Surge",
+      "precio": 3500,
+      "fecha": "2021/2/28",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86b1b856-3c94-49dc-b6d2-2716591c47f9/calzado-de-resistencia-zoomx-superrep-surge-2pXGmf.png",
+      "descripcion": "El calzado Nike ZoomX SuperRep Surge está diseñado para clases y entrenamientos que te mantienen en movimiento. Desde la cinta de correr hasta el entrenamiento de fuerza, pasando por la máquina de remo, obtienes la amortiguación eficaz de la espuma Nike ZoomX y el soporte de contención del arco en el lateral para mantenerte a la vanguardia.",
+      "tallas": [
+        { "talla": 21, "stock": 58 },
+        { "talla": 22, "stock": 14 },
+        { "talla": 23, "stock": 15 },
+        { "talla": 24, "stock": 55 },
+        { "talla": 25, "stock": 50 }
+      ]
+    },
+    {
+      "id":3056545,
+      "marca": "Nike",
+      "modelo": "Air Max 90 LTR SE",
+      "precio": 4000,
+      "fecha": "2021/2/11",
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/adf7d728-8f35-457c-9069-9623beb857da/calzado-talla-grande-air-max-90-ltr-se-c7dK98.png",
+      "descripcion": "Ilumina tu día con una chispa a cada paso: el Nike Air Max 90 LTR SE trae cuero duradero, Max Air y toda la diversión que puedas manejar.",
+      "tallas": [
+        {
+          "talla": 21,
+          "stock": 58
+        },
+        {
+          "talla": 22,
+          "stock": 14
+        },
+        {
+          "talla": 23,
+          "stock": 15
+        },
+        {
+          "talla": 24,
+          "stock": 55
+        },
+        {
+          "talla": 25,
+          "stock": 50
+        }
+      ]
+    },
+    {
+        "id":256545,
+        "marca": "Nike",
+        "modelo": "ZoomX SuperRep Surge",
+        "precio": 3500,
+        "fecha": "2021/2/26",
+        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86b1b856-3c94-49dc-b6d2-2716591c47f9/calzado-de-resistencia-zoomx-superrep-surge-2pXGmf.png",
+        "descripcion": "El calzado Nike ZoomX SuperRep Surge está diseñado para clases y entrenamientos que te mantienen en movimiento. Desde la cinta de correr hasta el entrenamiento de fuerza, pasando por la máquina de remo, obtienes la amortiguación eficaz de la espuma Nike ZoomX y el soporte de contención del arco en el lateral para mantenerte a la vanguardia.",
+        "tallas": [
+          { "talla": 21, "stock": 58 },
+          { "talla": 22, "stock": 14 },
+          { "talla": 23, "stock": 15 },
+          { "talla": 24, "stock": 55 },
+          { "talla": 25, "stock": 50 }
+        ]
+      },
+      {
+        "id":56545,
+        "marca": "Nike",
+        "modelo": "ZoomX SuperRep Surge",
+        "precio": 3500,
+        "fecha": "2021/2/15",
+        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86b1b856-3c94-49dc-b6d2-2716591c47f9/calzado-de-resistencia-zoomx-superrep-surge-2pXGmf.png",
+        "descripcion": "El calzado Nike ZoomX SuperRep Surge está diseñado para clases y entrenamientos que te mantienen en movimiento. Desde la cinta de correr hasta el entrenamiento de fuerza, pasando por la máquina de remo, obtienes la amortiguación eficaz de la espuma Nike ZoomX y el soporte de contención del arco en el lateral para mantenerte a la vanguardia.",
+        "tallas": [
+          { "talla": 21, "stock": 58 },
+          { "talla": 22, "stock": 14 },
+          { "talla": 23, "stock": 15 },
+          { "talla": 24, "stock": 55 },
+          { "talla": 25, "stock": 50 }
+        ]
+      },
+      {
+        "id":20565665,
+        "marca": "Nike",
+        "modelo": "ZoomX SuperRep Surge",
+        "precio": 3500,
+        "fecha": "2021/3/10",
+        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86b1b856-3c94-49dc-b6d2-2716591c47f9/calzado-de-resistencia-zoomx-superrep-surge-2pXGmf.png",
+        "descripcion": "El calzado Nike ZoomX SuperRep Surge está diseñado para clases y entrenamientos que te mantienen en movimiento. Desde la cinta de correr hasta el entrenamiento de fuerza, pasando por la máquina de remo, obtienes la amortiguación eficaz de la espuma Nike ZoomX y el soporte de contención del arco en el lateral para mantenerte a la vanguardia.",
+        "tallas": [
+          { "talla": 21, "stock": 58 },
+          { "talla": 22, "stock": 14 },
+          { "talla": 23, "stock": 15 },
+          { "talla": 24, "stock": 55 },
+          { "talla": 25, "stock": 50 }
+        ]
+      },
+      {
+        "id":987056545,
+        "marca": "Nike",
+        "modelo": "ZoomX SuperRep Surge",
+        "precio": 3500,
+        "fecha": "2021/6/25",
+        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86b1b856-3c94-49dc-b6d2-2716591c47f9/calzado-de-resistencia-zoomx-superrep-surge-2pXGmf.png",
+        "descripcion": "El calzado Nike ZoomX SuperRep Surge está diseñado para clases y entrenamientos que te mantienen en movimiento. Desde la cinta de correr hasta el entrenamiento de fuerza, pasando por la máquina de remo, obtienes la amortiguación eficaz de la espuma Nike ZoomX y el soporte de contención del arco en el lateral para mantenerte a la vanguardia.",
+        "tallas": [
+          { "talla": 21, "stock": 58 },
+          { "talla": 22, "stock": 14 },
+          { "talla": 23, "stock": 15 },
+          { "talla": 24, "stock": 55 },
+          { "talla": 25, "stock": 50 }
+        ]
+      },
+      {
+        "id":1456658,
+        "marca": "Nike",
+        "modelo": "ZoomX SuperRep Surge",
+        "precio": 3500,
+        "fecha": "2021/2/25",
+        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86b1b856-3c94-49dc-b6d2-2716591c47f9/calzado-de-resistencia-zoomx-superrep-surge-2pXGmf.png",
+        "descripcion": "El calzado Nike ZoomX SuperRep Surge está diseñado para clases y entrenamientos que te mantienen en movimiento. Desde la cinta de correr hasta el entrenamiento de fuerza, pasando por la máquina de remo, obtienes la amortiguación eficaz de la espuma Nike ZoomX y el soporte de contención del arco en el lateral para mantenerte a la vanguardia.",
+        "tallas": [
+          { "talla": 21, "stock": 58 },
+          { "talla": 22, "stock": 14 },
+          { "talla": 23, "stock": 15 },
+          { "talla": 24, "stock": 55 },
+          { "talla": 25, "stock": 50 }
+        ]
+      }
+      ,
+      {
+        "id":656658,
+        "marca": "Nike",
+        "modelo": "ZoomX SuperRep Surge",
+        "precio": 3500,
+        "fecha": "2021/8/25",
+        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86b1b856-3c94-49dc-b6d2-2716591c47f9/calzado-de-resistencia-zoomx-superrep-surge-2pXGmf.png",
+        "descripcion": "El calzado Nike ZoomX SuperRep Surge está diseñado para clases y entrenamientos que te mantienen en movimiento. Desde la cinta de correr hasta el entrenamiento de fuerza, pasando por la máquina de remo, obtienes la amortiguación eficaz de la espuma Nike ZoomX y el soporte de contención del arco en el lateral para mantenerte a la vanguardia.",
+        "tallas": [
+          { "talla": 21, "stock": 58 },
+          { "talla": 22, "stock": 14 },
+          { "talla": 23, "stock": 15 },
+          { "talla": 24, "stock": 55 },
+          { "talla": 25, "stock": 50 }
+        ]
+      }
+      ,
+      {
+        "id":145687658,
+        "marca": "Nike",
+        "modelo": "ZoomX SuperRep Surge",
+        "precio": 3500,
+        "fecha": "2021/9/1",
+        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86b1b856-3c94-49dc-b6d2-2716591c47f9/calzado-de-resistencia-zoomx-superrep-surge-2pXGmf.png",
+        "descripcion": "El calzado Nike ZoomX SuperRep Surge está diseñado para clases y entrenamientos que te mantienen en movimiento. Desde la cinta de correr hasta el entrenamiento de fuerza, pasando por la máquina de remo, obtienes la amortiguación eficaz de la espuma Nike ZoomX y el soporte de contención del arco en el lateral para mantenerte a la vanguardia.",
+        "tallas": [
+          { "talla": 21, "stock": 58 },
+          { "talla": 22, "stock": 14 },
+          { "talla": 23, "stock": 15 },
+          { "talla": 24, "stock": 55 },
+          { "talla": 25, "stock": 50 }
+        ]
+      }
+      ,
+      {
+        "id":145666225,
+        "marca": "Nike",
+        "modelo": "ZoomX SuperRep Surge",
+        "precio": 3500,
+        "fecha": "2021/9/2",
+        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86b1b856-3c94-49dc-b6d2-2716591c47f9/calzado-de-resistencia-zoomx-superrep-surge-2pXGmf.png",
+        "descripcion": "El calzado Nike ZoomX SuperRep Surge está diseñado para clases y entrenamientos que te mantienen en movimiento. Desde la cinta de correr hasta el entrenamiento de fuerza, pasando por la máquina de remo, obtienes la amortiguación eficaz de la espuma Nike ZoomX y el soporte de contención del arco en el lateral para mantenerte a la vanguardia.",
+        "tallas": [
+          { "talla": 21, "stock": 58 },
+          { "talla": 22, "stock": 14 },
+          { "talla": 23, "stock": 15 },
+          { "talla": 24, "stock": 55 },
+          { "talla": 25, "stock": 50 }
+        ]
+      }
+      ,
+      {
+        "id":5658774,
+        "marca": "Nike",
+        "modelo": "ZoomX SuperRep Surge",
+        "precio": 3500,
+        "fecha": "2021/12/25",
+        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86b1b856-3c94-49dc-b6d2-2716591c47f9/calzado-de-resistencia-zoomx-superrep-surge-2pXGmf.png",
+        "descripcion": "El calzado Nike ZoomX SuperRep Surge está diseñado para clases y entrenamientos que te mantienen en movimiento. Desde la cinta de correr hasta el entrenamiento de fuerza, pasando por la máquina de remo, obtienes la amortiguación eficaz de la espuma Nike ZoomX y el soporte de contención del arco en el lateral para mantenerte a la vanguardia.",
+        "tallas": [
+          { "talla": 21, "stock": 58 },
+          { "talla": 22, "stock": 14 },
+          { "talla": 23, "stock": 15 },
+          { "talla": 24, "stock": 55 },
+          { "talla": 25, "stock": 50 }
+        ]
+      },
+      {
+        "id":1456658,
+        "marca": "Nike",
+        "modelo": "ZoomX SuperRep Surge",
+        "precio": 3500,
+        "fecha": "2021/2/21",
+        "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/86b1b856-3c94-49dc-b6d2-2716591c47f9/calzado-de-resistencia-zoomx-superrep-surge-2pXGmf.png",
+        "descripcion": "El calzado Nike ZoomX SuperRep Surge está diseñado para clases y entrenamientos que te mantienen en movimiento. Desde la cinta de correr hasta el entrenamiento de fuerza, pasando por la máquina de remo, obtienes la amortiguación eficaz de la espuma Nike ZoomX y el soporte de contención del arco en el lateral para mantenerte a la vanguardia.",
+        "tallas": [
+          { "talla": 21, "stock": 58 },
+          { "talla": 22, "stock": 14 },
+          { "talla": 23, "stock": 15 },
+          { "talla": 24, "stock": 55 },
+          { "talla": 25, "stock": 50 }
+        ]
+      }
+  ],
+  "users": []
+}
