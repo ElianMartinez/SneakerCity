@@ -13,8 +13,6 @@
   align-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
-
-
 }
 .Heading {
   font-size: 30px;
@@ -29,6 +27,10 @@
   border-bottom: 1px solid #e44c4c;
 }
 
+.out {
+  color: white;
+  pointer-events: none;
+}
 hr {
   width: 66%;
   float: right;

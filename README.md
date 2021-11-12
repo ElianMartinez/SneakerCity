@@ -3,8 +3,10 @@
 
 
 Tienda online de Tenis, projecto para entrevista del popular. Continua...
+![Home](https://res.cloudinary.com/dejblqyrx/image/upload/v1636750041/Captura_de_pantalla_de_2021-11-12_16-47-06_avo3ht.png)
 
-
+![Detalle del Producto](https://res.cloudinary.com/dejblqyrx/image/upload/v1636750151/Captura_de_pantalla_de_2021-11-12_16-48-24_qm3c1o.png)
+ 
 ## Funcionalidades del proyecto
 
 * Carrito de compras

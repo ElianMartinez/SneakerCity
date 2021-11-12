@@ -11,7 +11,6 @@ const readFile = () => {
 
 const saveChange = (data) => {
   try {
-    console.log(data)
     const writeStream = fs.createWriteStream(rutaDelArchivo);
     writeStream.write(data);
     return true;

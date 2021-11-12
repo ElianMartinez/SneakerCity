@@ -9,17 +9,18 @@ const getAll = async (req, res) => {
 };
 
 const Post = async (req, res) => {
-  const { datos } = req.body;
-  if (isArray(datos)) {
-    data = await CompleteCheckout(datos);
-    res.json({ data: data, error: false });
+  const { data } = req.body;
+  if (Array.isArray(data)) {
+    const Idata = await CompleteCheckout(data);
+    res.json({ data: Idata, error: false });
+  } else {
+    res.status(400).json({ data: "", error: false });
   }
 };
 
 const get = async (req, res) => {
   const { id } = req.params;
   const val = new RegExp("^[0-9]*$", "gm");
-
   if (val.test(id)) {
     const product = await getProduct(id);
     if (Object.keys(product).length == 0) {
@@ -34,4 +35,4 @@ const get = async (req, res) => {
   }
 };
 
-module.exports = { getAll, get , Post};
+module.exports = { getAll, get, Post };

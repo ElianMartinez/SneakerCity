@@ -1,10 +1,11 @@
 import { useParams } from "react-router";
 import "./index.css";
 import { Link, Button, Grow } from "@material-ui/core";
-import { getProduct, addCart } from "../../redux/slices/product";
+import { getProduct, addCart, changeActive } from "../../redux/slices/product";
 import { useDispatch, useSelector } from "react-redux";
 import { fCurrency } from "../../utils/formatNumber";
 import React from "react";
+import moment from "moment";
 
 const ProductPage = () => {
   let { id } = useParams();
@@ -39,7 +40,11 @@ const ProductPage = () => {
             </div>
 
             {/* <!-- Product Configuration --> */}
-            <div className="product-configuration">
+            <span>Fecha de salida: {moment(product.fecha).format("LL")}</span>
+            <div
+              style={{ marginBottom: "30px" }}
+              className="product-configuration"
+            >
               {/* <!--  tallas --> */}
               <div className="cable-config">
                 <span>Size</span>
@@ -94,6 +99,7 @@ const ProductPage = () => {
                     size: selection.talla,
                   };
                   dispatch(addCart(newObj));
+                  dispatch(changeActive(true));
                   setSeletion({});
                 }}
                 className="cart-btn"

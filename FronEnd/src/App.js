@@ -26,6 +26,7 @@ export default function App() {
           <Router history={history}>
             <ScrollToTop />
             {renderRoutes(routes)}
+        
           </Router>
         </ThemeConfig>
       </PersistGate>

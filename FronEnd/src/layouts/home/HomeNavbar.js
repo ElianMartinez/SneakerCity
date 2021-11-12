@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/styles";
-import { getCart } from "../../redux/slices/product";
+import { getCart,changeActive } from "../../redux/slices/product";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import {
   Typography,
@@ -23,15 +23,14 @@ function ButtonAppBar() {
   const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
 
   const handleMenu = (event) => {
     dispatch(getCart(checkout.cart));
-    setAnchorEl(event.currentTarget);
+    dispatch(changeActive(true));
   };
 
   const handleClose = () => {
-    setAnchorEl(null);
+    dispatch(changeActive(false));
   };
 
   return (
@@ -57,7 +56,7 @@ function ButtonAppBar() {
           </div>
         </Toolbar>
       </AppBar>
-      <ShoppingCart data={checkout} open={open} close={handleClose} />
+      <ShoppingCart data={checkout} open={checkout.active} close={handleClose} />
     </>
   );
 }

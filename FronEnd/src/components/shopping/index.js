@@ -4,7 +4,7 @@ import { Slide, Dialog } from "@material-ui/core";
 import ShoppingProduct from "../shoppingProduct";
 import { fCurrency } from "../../utils/formatNumber";
 
-import { resetCart, getCart } from "../../redux/slices/product";
+import { resetCart, getCart, CheckoutDone } from "../../redux/slices/product";
 import { useDispatch, useSelector } from "react-redux";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -15,6 +15,7 @@ const ShoppingCart = ({ data, open, close }) => {
   const dispatch = useDispatch();
   const { checkout } = useSelector((state) => state.product);
   const { cart } = checkout;
+
 
   const deleteCartAll = () => {
     dispatch(resetCart());
@@ -37,14 +38,14 @@ const ShoppingCart = ({ data, open, close }) => {
       >
         <div className="Cart-Container">
           <div className="Header">
-            <h3 className="Heading">Shopping Cart</h3>
+            <h3 className="Heading">Carrito de compras</h3>
             <h5
               onClick={() => {
                 deleteCartAll();
               }}
               className="Action"
             >
-              Remove all
+              Quitar todo
             </h5>
           </div>
           {data.cart.map((a) => {
@@ -61,8 +62,12 @@ const ShoppingCart = ({ data, open, close }) => {
               </div>
               <div className="total-amount">{fCurrency(data.subtotal)}</div>
             </div>
-            <button className="button">Checkout</button>
+            {cart.length > 0 ? (<button  onClick={() => {
+              dispatch(CheckoutDone(cart));
+            }} className="button">Checkout</button>
+          ) : "" }
           </div>
+            
         </div>
       </Dialog>
     </div>

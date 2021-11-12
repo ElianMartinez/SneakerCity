@@ -27,6 +27,8 @@ const initialState = {
     discount: 0,
     shipping: 0,
     billing: null,
+    active: false,
+    complete: false,
   },
 };
 
@@ -34,6 +36,9 @@ const slice = createSlice({
   name: "product",
   initialState,
   reducers: {
+    changeActive(state, action) {
+      state.checkout.active = action.payload;
+    },
     // START LOADING
     startLoading(state) {
       state.isLoading = true;
@@ -51,6 +56,10 @@ const slice = createSlice({
       state.products = action.payload;
     },
 
+    getCheckoutSuccess(state, action) {
+      state.isLoading = false;
+      state.checkout.complete = action.payload;
+    },
     // GET PRODUCT
     getProductSuccess(state, action) {
       state.isLoading = false;
@@ -109,11 +118,18 @@ const slice = createSlice({
           if (isExisted) {
             return {
               ..._product,
-              quantity: _product.quantity + 1,
-              total: product.quantity * product.precio,
+              quantity:
+                _product.stock > _product.quantity
+                  ? _product.quantity + 1
+                  : _product.quantity,
+              total: _product.quantity * _product.precio,
             };
           }
-          return { ..._product, quantity: 1, total: _product.precio };
+          return {
+            ..._product,
+            quantity: _product.quantity,
+            total: _product.precio,
+          };
         });
       }
 
@@ -142,6 +158,7 @@ const slice = createSlice({
       state.checkout.discount = 0;
       state.checkout.shipping = 0;
       state.checkout.billing = null;
+      state.checkout.active = false;
     },
 
     onBackStep(state) {
@@ -161,11 +178,13 @@ const slice = createSlice({
       const productId = action.payload;
       const updateCart = map(state.checkout.cart, (product) => {
         if (product.id === productId) {
-          return {
-            ...product,
-            quantity: product.quantity ? product.quantity + 1 : 2,
-            total: product.total + product.precio,
-          };
+          if (product.stock > product.quantity) {
+            return {
+              ...product,
+              quantity: product.quantity ? product.quantity + 1 : 2,
+              total: product.total + product.precio,
+            };
+          }
         }
         return product;
       });
@@ -228,6 +247,7 @@ export const {
   decreaseQuantity,
   sortByProducts,
   filterProducts,
+  changeActive,
 } = slice.actions;
 
 // ----------------------------------------------------------------------
@@ -261,4 +281,26 @@ export function getProduct(id) {
       dispatch(slice.actions.hasError(error));
     }
   };
+}
+
+export function CheckoutDone(arr) {
+ 
+    return async (dispatch) => {
+      dispatch(slice.actions.startLoading());
+      try {
+        const response = await axios.post("/product/checkout/", { data: arr });
+        console.log(response);
+        if (response.status === 200) {
+          dispatch(slice.actions.getCheckoutSuccess(response.data.data));
+          dispatch(slice.actions.resetCart());
+          window.location = "/";
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Ocurrio un error con el servidor. Intente recargar la página");
+        window.location = "/";
+        dispatch(slice.actions.hasError(error));
+      }
+    };
+  
 }
