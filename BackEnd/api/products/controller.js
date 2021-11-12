@@ -5,7 +5,7 @@ const getAll = async (req, res) => {
   setTimeout(async () => {
     data = await getProducts(10);
     res.json({ data: data, error: false });
-  }, 1000);
+  }, 500);
 };
 
 const Post = async (req, res) => {

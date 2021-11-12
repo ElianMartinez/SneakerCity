@@ -47,6 +47,10 @@ const ShoppingProduct = ({ obj }) => {
         <h3 className="subtitle"> Size: {obj.size}</h3>
       </div>
       <div className="counter">
+        <Button onClick={down} variant="contained">
+          -
+        </Button>
+        <div className="count"> {obj.quantity ? obj.quantity : 1}</div>
         <Button
           onClick={() => {
             up();
@@ -54,10 +58,6 @@ const ShoppingProduct = ({ obj }) => {
           variant="contained"
         >
           +
-        </Button>
-        <div className="count"> {obj.quantity ? obj.quantity : 1}</div>
-        <Button onClick={down} variant="contained">
-          -
         </Button>
       </div>
       <div className="prices">
