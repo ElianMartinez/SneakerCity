@@ -14,7 +14,7 @@ const ProductPage = () => {
 
   React.useEffect(() => {
     dispatch(getProduct(id));
-  }, [dispatch]);
+  }, [id, dispatch]);
   const addSelection = (t) => {
     setSeletion(t);
   };
@@ -76,8 +76,6 @@ const ProductPage = () => {
                     limpiar
                   </button>
                 </div>
-
-               
               </div>
             </div>
 

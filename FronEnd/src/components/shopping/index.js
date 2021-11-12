@@ -4,7 +4,7 @@ import { Slide, Dialog } from "@material-ui/core";
 import ShoppingProduct from "../shoppingProduct";
 import { fCurrency } from "../../utils/formatNumber";
 
-import {resetCart, getCart } from "../../redux/slices/product";
+import { resetCart, getCart } from "../../redux/slices/product";
 import { useDispatch, useSelector } from "react-redux";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -15,7 +15,6 @@ const ShoppingCart = ({ data, open, close }) => {
   const dispatch = useDispatch();
   const { checkout } = useSelector((state) => state.product);
   const { cart } = checkout;
-
 
   const deleteCartAll = () => {
     dispatch(resetCart());

@@ -1,4 +1,4 @@
-const { getProducts, getProduct } = require("./model");
+const { getProducts, getProduct, CompleteCheckout } = require("./model");
 
 const getAll = async (req, res) => {
   let data = [];
@@ -6,6 +6,14 @@ const getAll = async (req, res) => {
     data = await getProducts(10);
     res.json({ data: data, error: false });
   }, 3000);
+};
+
+const Post = async (req, res) => {
+  const { datos } = req.body;
+  if (isArray(datos)) {
+    data = await CompleteCheckout(datos);
+    res.json({ data: data, error: false });
+  }
 };
 
 const get = async (req, res) => {
@@ -26,4 +34,4 @@ const get = async (req, res) => {
   }
 };
 
-module.exports = { getAll, get };
+module.exports = { getAll, get , Post};
