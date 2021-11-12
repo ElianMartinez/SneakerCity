@@ -1,8 +1,11 @@
 const { getProducts, getProduct } = require("./model");
 
 const getAll = async (req, res) => {
-  const data = await getProducts(10);
-  res.json({ data: data, error: false });
+  let data = [];
+  setTimeout(async () => { 
+    data = await getProducts(10);
+    res.json({ data: data, error: false });
+  } , 3000);
 };
 
 const get = async (req, res) => {
