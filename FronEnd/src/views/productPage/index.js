@@ -78,7 +78,7 @@ const ProductPage = (props) => {
                   </button>
                 </div>
 
-                <p>How to configurate your headphones</p>
+               
               </div>
             </div>
 
@@ -97,6 +97,7 @@ const ProductPage = (props) => {
                     size: selection.talla,
                   };
                   dispatch(addCart(newObj));
+                  setSeletion({});
                 }}
                 className="cart-btn"
               >
