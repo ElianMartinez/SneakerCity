@@ -289,10 +289,10 @@ export function CheckoutDone(arr) {
       dispatch(slice.actions.startLoading());
       try {
         const response = await axios.post("/product/checkout/", { data: arr });
-        console.log(response);
         if (response.status === 200) {
           dispatch(slice.actions.getCheckoutSuccess(response.data.data));
           dispatch(slice.actions.resetCart());
+          alert("Pago realizado con exito");
           window.location = "/";
         }
       } catch (error) {

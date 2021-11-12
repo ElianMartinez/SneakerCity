@@ -19,6 +19,11 @@ const HomeRoutes = {
       path: "/product/:id",
       component: lazy(() => import("../views/productPage")),
     },
+    {
+      exact: true,
+      path: "/CreditCard",
+      component: lazy(() => import("../views/creditCard")),
+    },
 
     // ----------------------------------------------------------------------
 
