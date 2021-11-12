@@ -4,7 +4,7 @@ const SkeletonList = ({ arr }) => {
     <div
       style={{
         display: "flex",
-        justifyContent: "flex-start",
+        justifyContent: "center",
         flexWrap: "wrap",
       }}
     >

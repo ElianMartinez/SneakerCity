@@ -21,7 +21,7 @@ ThemeConfig.propTypes = {
 };
 
 export default function ThemeConfig({ children }) {
-  const isLight = "dark";
+  const isLight = "light";
   const themeDirection = "themeDirection";
 
   const themeOptions = useMemo(

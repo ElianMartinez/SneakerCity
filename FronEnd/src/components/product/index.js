@@ -3,7 +3,7 @@ import React from "react";
 import { fCurrency } from "../../utils/formatNumber";
 import { Button } from "@material-ui/core";
 import moment from "moment";
-import Label from '../Label';
+import Label from "../Label";
 
 const Product = ({ data }) => {
   return (
@@ -20,7 +20,7 @@ const Product = ({ data }) => {
           <p style={{ fontSize: "45px", fontWeight: "bold" }}>
             {fCurrency(data.precio)}
           </p>
-          <Label>{data.fecha}</Label>
+          <Label style={{position:'absolute',top:"10px", right:"10px"}} color="success">{moment(data.fecha).fromNow(false)}</Label>
         </figcaption>
       </figure>
     </Button>

@@ -11,12 +11,14 @@ import ThemeConfig from "./theme";
 // components
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingScreen from "./components/LoadingScreen";
-
+import "moment/locale/es";
+import moment from "moment";
 // ----------------------------------------------------------------------
 
 const history = createBrowserHistory();
 
 export default function App() {
+  moment.locale("es");
   return (
     <ReduxProvider store={store}>
       <PersistGate loading={<LoadingScreen />} persistor={persistor}>

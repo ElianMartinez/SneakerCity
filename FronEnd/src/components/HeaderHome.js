@@ -1,7 +1,7 @@
-import { isString } from 'lodash';
-import PropTypes from 'prop-types';
+import { isString } from "lodash";
+import PropTypes from "prop-types";
 // material
-import { Box, Typography, Link } from '@material-ui/core';
+import { Box, Typography, Link } from "@material-ui/core";
 //
 
 // ----------------------------------------------------------------------
@@ -11,20 +11,20 @@ HeaderDashboard.propTypes = {
   action: PropTypes.node,
   heading: PropTypes.string.isRequired,
   moreLink: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  sx: PropTypes.object
+  sx: PropTypes.object,
 };
 
 export default function HeaderDashboard({
   links,
   action,
   heading,
-  moreLink = '' || [],
+  moreLink = "" || [],
   sx,
   ...other
 }) {
   return (
     <Box sx={{ mb: 5, ...sx }}>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ display: "flex", alignItems: "center" }}>
         <Box sx={{ flexGrow: 1 }}>
           <Typography variant="h4" gutterBottom>
             {heading}
@@ -47,7 +47,7 @@ export default function HeaderDashboard({
               href={href}
               variant="body2"
               target="_blank"
-              sx={{ display: 'table' }}
+              sx={{ display: "table" }}
             >
               {href}
             </Link>

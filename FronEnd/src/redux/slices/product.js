@@ -96,6 +96,7 @@ const slice = createSlice({
         state.checkout.cart = [...state.checkout.cart, product];
       } else {
         state.checkout.cart = map(state.checkout.cart, (_product) => {
+          console.log(_product);
           const isExisted = _product.id === product.id;
           if (isExisted) {
             return {
@@ -218,7 +219,6 @@ export function getProducts() {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get("/product");
-      console.log(response);
       dispatch(slice.actions.getProductsSuccess(response.data.data));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
