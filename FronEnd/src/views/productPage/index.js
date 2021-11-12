@@ -3,19 +3,18 @@ import "./index.css";
 import { Link, Button, Grow } from "@material-ui/core";
 import { getProduct, addCart } from "../../redux/slices/product";
 import { useDispatch, useSelector } from "react-redux";
-import SkeletonList from "../../components/SkeletonList";
 import { fCurrency } from "../../utils/formatNumber";
 import React from "react";
 
-const ProductPage = (props) => {
+const ProductPage = () => {
   let { id } = useParams();
   const dispatch = useDispatch();
   const [selection, setSeletion] = React.useState({});
-  const { product, isLoading } = useSelector((state) => state.product);
+  const { product } = useSelector((state) => state.product);
 
   React.useEffect(() => {
     dispatch(getProduct(id));
-  }, []);
+  }, [dispatch]);
   const addSelection = (t) => {
     setSeletion(t);
   };

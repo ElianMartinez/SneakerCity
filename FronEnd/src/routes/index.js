@@ -96,7 +96,7 @@ const routes = [
   {
     exact: true,
     path: '/404',
-    component: lazy(() => import('../views/page404'))
+    component: lazy(() => import('../views/404Page/page404'))
   },
   // Home Routes
   HomeRoutes

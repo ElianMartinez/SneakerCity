@@ -67,7 +67,9 @@ const ShoppingProduct = ({ obj }) => {
         </div>
 
         <div className="remove">
-          <Button color="error" variant="contained" onClick={() => deleteCa()}>Remove</Button>
+          <Button color="error" variant="contained" onClick={() => deleteCa()}>
+            Remove
+          </Button>
         </div>
       </div>
     </div>
