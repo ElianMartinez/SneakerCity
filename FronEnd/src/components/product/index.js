@@ -2,6 +2,8 @@ import "./index.css";
 import React from "react";
 import { fCurrency } from "../../utils/formatNumber";
 import { Button } from "@material-ui/core";
+import moment from "moment";
+import Label from '../Label';
 
 const Product = ({ data }) => {
   return (
@@ -18,6 +20,7 @@ const Product = ({ data }) => {
           <p style={{ fontSize: "45px", fontWeight: "bold" }}>
             {fCurrency(data.precio)}
           </p>
+          <Label>{data.fecha}</Label>
         </figcaption>
       </figure>
     </Button>

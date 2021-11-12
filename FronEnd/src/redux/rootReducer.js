@@ -1,19 +1,26 @@
-import { combineReducers } from 'redux';
-import storage from 'redux-persist/lib/storage';
-// slices
-import settingsReducer from './slices/settings';
+import { combineReducers } from "redux";
+import { persistReducer } from "redux-persist";
 
+import storage from "redux-persist/lib/storage";
+// slices
+import productReducer from "./slices/product";
 // ----------------------------------------------------------------------
+const productPersistConfig = {
+  key: "product",
+  storage,
+  keyPrefix: "redux-",
+  whitelist: ["sortBy", "checkout"],
+};
 
 const rootPersistConfig = {
-  key: 'root',
+  key: "root",
   storage,
-  keyPrefix: 'redux-',
-  whitelist: ['settings']
+  keyPrefix: "redux-",
+  whitelist: ["settings"],
 };
 
 const rootReducer = combineReducers({
-  settings: settingsReducer
+  product: persistReducer(productPersistConfig, productReducer),
 });
 
 export { rootPersistConfig, rootReducer };

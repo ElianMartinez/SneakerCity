@@ -217,9 +217,9 @@ export function getProducts() {
   return async (dispatch) => {
     dispatch(slice.actions.startLoading());
     try {
-      console.log("redux");
-      const response = await axios.get("/products");
-      dispatch(slice.actions.getProductsSuccess(response.data.products));
+      const response = await axios.get("/product");
+      console.log(response);
+      dispatch(slice.actions.getProductsSuccess(response.data.data));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
@@ -232,9 +232,8 @@ export function getProduct(id) {
   return async (dispatch) => {
     dispatch(slice.actions.startLoading());
     try {
-      
-      const response = await axios.get("/products/" + id);
-      dispatch(slice.actions.getProductSuccess(response.data.product));
+      const response = await axios.get("/product/" + id);
+      dispatch(slice.actions.getProductSuccess(response.data.data));
     } catch (error) {
       console.error(error);
       dispatch(slice.actions.hasError(error));
