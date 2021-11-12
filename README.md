@@ -21,7 +21,7 @@ Tienda online de Tenis, projecto para entrevista del popular. Continua...
 	* 4000 (Backend)
 	 * 3000 (Frontend)
 
-## Instalacion del backend
+## Instalación del backend
 
 Para instalar  sus dependencias ejecutar los siguentes comandos:
  
@@ -37,7 +37,7 @@ Para realizar las pruebas unitarias el comando es:
 
     npm run test
 
-## Instalacion del Frontend
+## Instalación del Frontend
 
 Para instalar  sus dependencias ejecutar los siguentes comandos:
  

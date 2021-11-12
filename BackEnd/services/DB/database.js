@@ -1,8 +1,8 @@
-const dataset = require("./dataset_copy.json");
+const dataset = require("./dataset.json");
 const path = require("path");
 const fs = require("fs");
 
-const rutaDelArchivo = path.join(__dirname, "dataset_copy.json");
+const rutaDelArchivo = path.join(__dirname, "dataset.json");
 
 const readFile = () => {
   return dataset;
