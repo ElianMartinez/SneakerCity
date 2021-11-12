@@ -6,14 +6,12 @@ const axiosInstance = axios.create({
   baseURL: config.baseUrl,
 });
 
-axiosInstance.interceptors.request.use((request) => {
-  console.log(request.method);
+// axiosInstance.interceptors.request.use((request) => {
 
-  return request;
-});
+//   return request;
+// });
 // axiosInstance.interceptors.response.use((response) => {
-//     // console.log(response);
-//     return response;
+    
 // })
 
 

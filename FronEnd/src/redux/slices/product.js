@@ -239,6 +239,7 @@ export function getProducts() {
       const response = await axios.get("/product");
       dispatch(slice.actions.getProductsSuccess(response.data.data));
     } catch (error) {
+      alert("Ocurrio un error con el servidor. Intente recargar la página");
       dispatch(slice.actions.hasError(error));
     }
   };
@@ -255,6 +256,8 @@ export function getProduct(id) {
       dispatch(slice.actions.getProductSuccess(response.data.data));
     } catch (error) {
       console.error(error);
+      alert("Ocurrio un error con el servidor. Intente recargar la página");
+      window.location = "/";
       dispatch(slice.actions.hasError(error));
     }
   };
