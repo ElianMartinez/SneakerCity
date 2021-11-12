@@ -10,7 +10,7 @@ const initialState = {
   isLoading: false,
   error: false,
   products: [],
-  product: null,
+  product: {},
   sortBy: null,
   filters: {
     gender: [],
@@ -251,6 +251,7 @@ export function getProduct(id) {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get("/product/" + id);
+      console.log(response);
       dispatch(slice.actions.getProductSuccess(response.data.data));
     } catch (error) {
       console.error(error);

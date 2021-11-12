@@ -14,6 +14,11 @@ const HomeRoutes = {
       path: "/",
       component: lazy(() => import("../views/home")),
     },
+    {
+      exact: true,
+      path: "/product/:id",
+      component: lazy(() => import("../views/productPage")),
+    },
 
     // ----------------------------------------------------------------------
 

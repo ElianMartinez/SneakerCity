@@ -2,10 +2,10 @@ const { getProducts, getProduct } = require("./model");
 
 const getAll = async (req, res) => {
   let data = [];
-  setTimeout(async () => { 
+  setTimeout(async () => {
     data = await getProducts(10);
     res.json({ data: data, error: false });
-  } , 3000);
+  }, 3000);
 };
 
 const get = async (req, res) => {
@@ -14,7 +14,6 @@ const get = async (req, res) => {
 
   if (val.test(id)) {
     const product = await getProduct(id);
-    console.log(product);
     if (Object.keys(product).length == 0) {
       return res
         .status(404)

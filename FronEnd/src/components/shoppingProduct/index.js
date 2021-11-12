@@ -44,21 +44,21 @@ const ShoppingProduct = ({ obj }) => {
       <div className="about">
         <h1 className="title">{obj.marca + " " + obj.modelo}</h1>
         <br />
-        <h3 className="subtitle">Talle </h3>
+        <h3 className="subtitle"> Size: {obj.size}</h3>
       </div>
       <div className="counter">
-        <Button
+        <button
           onClick={() => {
             up();
           }}
           variant="contained"
         >
           +
-        </Button>
+        </button>
         <div className="count"> {obj.quantity ? obj.quantity : 1}</div>
-        <Button onClick={down} variant="contained">
+        <button onClick={down} variant="contained">
           -
-        </Button>
+        </button>
       </div>
       <div className="prices">
         <div className="amount">{fCurrency(obj.total)}</div>

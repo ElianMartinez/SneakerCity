@@ -4,19 +4,13 @@ import { fCurrency } from "../../utils/formatNumber";
 import { Button } from "@material-ui/core";
 import moment from "moment";
 import Label from "../Label";
-import { useDispatch } from "react-redux";
-import { addCart } from "../../redux/slices/product";
+import { Link } from "react-router-dom";
 
 const Product = ({ data }) => {
-  const dispatch = useDispatch();
   return (
-    <Button
-      onClick={() => {
-        dispatch(addCart(data));
-      }}
-    >
+    <Button color="primary" to={"/product/" + data.id} component={Link}>
       <figure className="product">
-        <img src={data.image} alt="sample108" />
+        <img src={data.image} alt="sample108" />  
         <figcaption>
           <h4>{data.marca + " " + data.modelo}</h4>
           <br></br>
