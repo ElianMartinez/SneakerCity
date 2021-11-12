@@ -67,7 +67,7 @@ const ShoppingProduct = ({ obj }) => {
         </div>
 
         <div className="remove">
-          <button onClick={() => deleteCa()}>Remove</button>
+          <Button onClick={() => deleteCa()}>Remove</Button>
         </div>
       </div>
     </div>
