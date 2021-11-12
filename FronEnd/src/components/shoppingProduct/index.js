@@ -47,18 +47,18 @@ const ShoppingProduct = ({ obj }) => {
         <h3 className="subtitle"> Size: {obj.size}</h3>
       </div>
       <div className="counter">
-        <button
+        <Button
           onClick={() => {
             up();
           }}
           variant="contained"
         >
           +
-        </button>
+        </Button>
         <div className="count"> {obj.quantity ? obj.quantity : 1}</div>
-        <button onClick={down} variant="contained">
+        <Button onClick={down} variant="contained">
           -
-        </button>
+        </Button>
       </div>
       <div className="prices">
         <div className="amount">{fCurrency(obj.total)}</div>
