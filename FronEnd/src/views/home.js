@@ -1,14 +1,17 @@
 import axios from "../utils/axios";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+import Product from "../components/product";
 const Home = () => {
+  const [product, setProduct] = useState([]);
   useEffect(() => {
     axios.get("/product").then((response) => {
-      console.log(response);
+      setProduct(response.data.data);
     });
   }, []);
 
-  return <p>Hola</p>;
+  return (
+    
+  );
 };
 
 export default Home;

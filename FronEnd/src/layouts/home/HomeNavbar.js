@@ -1,62 +1,75 @@
-import PropTypes from "prop-types";
-// material
-import { alpha, experimentalStyled as styled } from "@material-ui/core/styles";
-import { Box, AppBar, Hidden, Toolbar, IconButton } from "@material-ui/core";
-//
-
-// ----------------------------------------------------------------------
-
-const DRAWER_WIDTH = 280;
-const APPBAR_MOBILE = 64;
-const APPBAR_DESKTOP = 92;
-
-const RootStyle = styled(AppBar)(({ theme }) => ({
-  boxShadow: "none",
-  backdropFilter: "blur(6px)",
-  WebkitBackdropFilter: "blur(6px)", // Fix on Mobile
-  backgroundColor: alpha(theme.palette.background.default, 0.72),
-  [theme.breakpoints.up("lg")]: {
-    width: `calc(100% - ${DRAWER_WIDTH + 1}px)`,
+import React from "react";
+import { makeStyles } from "@material-ui/styles";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import {
+  Menu,
+  MenuItem,
+  Typography,
+  Toolbar,
+  AppBar,
+  IconButton,
+  Badge
+} from "@material-ui/core/";
+const useStyles = makeStyles(() => ({
+  title: {
+    flexGrow: 1,
   },
 }));
 
-const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
-  minHeight: APPBAR_MOBILE,
-  [theme.breakpoints.up("lg")]: {
-    minHeight: APPBAR_DESKTOP,
-    padding: theme.spacing(0, 5),
-  },
-}));
+export default function ButtonAppBar() {
+  const classes = useStyles();
 
-// ----------------------------------------------------------------------
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const products = 5;
 
-HomeNavbar.propTypes = {
-  onOpenSidebar: PropTypes.func,
-};
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-export default function HomeNavbar() {
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    <RootStyle>
-      <ToolbarStyle>
-        <Hidden lgUp>
-          <IconButton
-            onClick={() => {}}
-            sx={{ mr: 1, color: "text.primary" }}
-          ></IconButton>
-        </Hidden>
+    <AppBar>
+      <Toolbar>
+        <Typography variant="h3" className={classes.title}>
+          Sneaker City
+        </Typography>
         
-        <Box sx={{ flexGrow: 1 }} />
-
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            "& > *:not(:first-of-type)": {
-              ml: { xs: 0.5, sm: 2, lg: 3 },
-            },
-          }}
-        ></Box>
-      </ToolbarStyle>
-    </RootStyle>
+        <div>
+          <IconButton
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleMenu}
+            color="inherit"
+          >
+             <Badge badgeContent={products} color="error">
+            <ShoppingCartIcon  fontSize="large" />
+          </Badge>
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={open}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleClose}>My account</MenuItem>
+          </Menu>
+        </div>
+      </Toolbar>
+    </AppBar>
   );
 }
