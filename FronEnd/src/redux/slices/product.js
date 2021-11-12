@@ -1,6 +1,7 @@
 import { sum, map, filter, uniqBy } from "lodash";
 import { createSlice } from "@reduxjs/toolkit";
 // utils
+
 import axios from "../../utils/axios";
 
 // ----------------------------------------------------------------------
@@ -72,10 +73,16 @@ const slice = createSlice({
     // CHECKOUT
     getCart(state, action) {
       const cart = action.payload;
+      console.log(cart);
 
       const subtotal = sum(
-        cart.map((product) => product.price * product.quantity)
+        cart.map((_product) =>
+          _product.quantity
+            ? _product.quantity * _product.precio
+            : _product.precio
+        )
       );
+
       const discount = cart.length === 0 ? 0 : state.checkout.discount;
       const shipping = cart.length === 0 ? 0 : state.checkout.shipping;
       const billing = cart.length === 0 ? null : state.checkout.billing;
@@ -91,23 +98,32 @@ const slice = createSlice({
     addCart(state, action) {
       const product = action.payload;
       const isEmptyCart = state.checkout.cart.length === 0;
+      let newProduct = {};
 
       if (isEmptyCart) {
-        state.checkout.cart = [...state.checkout.cart, product];
+        newProduct = { ...product, quantity: 1, total: product.precio };
+        state.checkout.cart = [...state.checkout.cart, newProduct];
       } else {
         state.checkout.cart = map(state.checkout.cart, (_product) => {
-          console.log(_product);
           const isExisted = _product.id === product.id;
           if (isExisted) {
             return {
               ..._product,
               quantity: _product.quantity + 1,
+              total: product.quantity * product.precio,
             };
           }
-          return _product;
+          return { ..._product, quantity: 1, total: _product.precio };
         });
       }
-      state.checkout.cart = uniqBy([...state.checkout.cart, product], "id");
+
+      state.checkout.cart = uniqBy(
+        [
+          ...state.checkout.cart,
+          { ...product, quantity: 1, total: product.precio },
+        ],
+        "id"
+      );
     },
 
     deleteCart(state, action) {
@@ -115,7 +131,6 @@ const slice = createSlice({
         state.checkout.cart,
         (item) => item.id !== action.payload
       );
-
       state.checkout.cart = updateCart;
     },
 
@@ -148,12 +163,12 @@ const slice = createSlice({
         if (product.id === productId) {
           return {
             ...product,
-            quantity: product.quantity + 1,
+            quantity: product.quantity ? product.quantity + 1 : 2,
+            total: product.total + product.precio,
           };
         }
         return product;
       });
-
       state.checkout.cart = updateCart;
     },
 
@@ -161,10 +176,13 @@ const slice = createSlice({
       const productId = action.payload;
       const updateCart = map(state.checkout.cart, (product) => {
         if (product.id === productId) {
-          return {
-            ...product,
-            quantity: product.quantity - 1,
-          };
+          if (product.quantity > 1) {
+            return {
+              ...product,
+              quantity: product.quantity - 1,
+              total: product.total - product.precio,
+            };
+          }
         }
         return product;
       });

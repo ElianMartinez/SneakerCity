@@ -4,12 +4,15 @@ import { fCurrency } from "../../utils/formatNumber";
 import { Button } from "@material-ui/core";
 import moment from "moment";
 import Label from "../Label";
+import { useDispatch } from "react-redux";
+import { addCart } from "../../redux/slices/product";
 
 const Product = ({ data }) => {
+  const dispatch = useDispatch();
   return (
     <Button
       onClick={() => {
-        console.log(data.id);
+        dispatch(addCart(data));
       }}
     >
       <figure className="product">
@@ -20,7 +23,12 @@ const Product = ({ data }) => {
           <p style={{ fontSize: "45px", fontWeight: "bold" }}>
             {fCurrency(data.precio)}
           </p>
-          <Label style={{position:'absolute',top:"10px", right:"10px"}} color="success">{moment(data.fecha).fromNow(false)}</Label>
+          <Label
+            style={{ position: "absolute", top: "10px", right: "10px" }}
+            color="success"
+          >
+            {moment(data.fecha).fromNow(false)}
+          </Label>
         </figcaption>
       </figure>
     </Button>
