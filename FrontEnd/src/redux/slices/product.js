@@ -12,13 +12,6 @@ const initialState = {
   products: [],
   product: {},
   sortBy: null,
-  filters: {
-    gender: [],
-    category: "All",
-    colors: [],
-    priceRange: "",
-    rating: "",
-  },
   checkout: {
     activeStep: 0,
     cart: [],
@@ -43,19 +36,16 @@ const slice = createSlice({
     startLoading(state) {
       state.isLoading = true;
     },
-
     // HAS ERROR
     hasError(state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },
-
     // GET PRODUCTS
     getProductsSuccess(state, action) {
       state.isLoading = false;
       state.products = action.payload;
     },
-
     getCheckoutSuccess(state, action) {
       state.isLoading = false;
       state.checkout.complete = action.payload;
@@ -66,24 +56,9 @@ const slice = createSlice({
       state.product = action.payload;
     },
 
-    //  SORT & FILTER PRODUCTS
-    sortByProducts(state, action) {
-      state.sortBy = action.payload;
-    },
-
-    filterProducts(state, action) {
-      state.filters.gender = action.payload.gender;
-      state.filters.category = action.payload.category;
-      state.filters.colors = action.payload.colors;
-      state.filters.priceRange = action.payload.priceRange;
-      state.filters.rating = action.payload.rating;
-    },
-
     // CHECKOUT
     getCart(state, action) {
       const cart = action.payload;
-      console.log(cart);
-
       const subtotal = sum(
         cart.map((_product) =>
           _product.quantity
@@ -236,17 +211,12 @@ export const {
   getCart,
   addCart,
   resetCart,
-  onGotoStep,
-  onBackStep,
   onNextStep,
   deleteCart,
   createBilling,
   applyShipping,
-  applyDiscount,
   increaseQuantity,
   decreaseQuantity,
-  sortByProducts,
-  filterProducts,
   changeActive,
 } = slice.actions;
 
@@ -284,23 +254,21 @@ export function getProduct(id) {
 }
 
 export function CheckoutDone(arr) {
- 
-    return async (dispatch) => {
-      dispatch(slice.actions.startLoading());
-      try {
-        const response = await axios.post("/product/checkout/", { data: arr });
-        if (response.status === 200) {
-          dispatch(slice.actions.getCheckoutSuccess(response.data.data));
-          dispatch(slice.actions.resetCart());
-          alert("Pago realizado con exito");
-          window.location = "/";
-        }
-      } catch (error) {
-        console.error(error);
-        alert("Ocurrio un error con el servidor. Intente recargar la página");
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.post("/product/checkout/", { data: arr });
+      if (response.status === 200) {
+        dispatch(slice.actions.getCheckoutSuccess(response.data.data));
+        dispatch(slice.actions.resetCart());
+        alert("Pago realizado con exito");
         window.location = "/";
-        dispatch(slice.actions.hasError(error));
       }
-    };
-  
+    } catch (error) {
+      console.error(error);
+      alert("Ocurrio un error con el servidor. Intente recargar la página");
+      window.location = "/";
+      dispatch(slice.actions.hasError(error));
+    }
+  };
 }

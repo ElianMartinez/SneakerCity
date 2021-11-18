@@ -9,7 +9,6 @@ import { store, persistor } from "./redux/store";
 // theme
 import ThemeConfig from "./theme";
 // components
-import ScrollToTop from "./components/ScrollToTop";
 import LoadingScreen from "./components/LoadingScreen";
 import "moment/locale/es";
 import moment from "moment";
@@ -23,11 +22,7 @@ export default function App() {
     <ReduxProvider store={store}>
       <PersistGate loading={<LoadingScreen />} persistor={persistor}>
         <ThemeConfig>
-          <Router history={history}>
-            <ScrollToTop />
-            {renderRoutes(routes)}
-        
-          </Router>
+          <Router history={history}>{renderRoutes(routes)}</Router>
         </ThemeConfig>
       </PersistGate>
     </ReduxProvider>
