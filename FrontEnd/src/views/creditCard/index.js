@@ -7,7 +7,7 @@ const CreditCard = () => {
   const dispatch = useDispatch();
   const { checkout } = useSelector((state) => state.product);
   React.useEffect(() => {
-    if (checkout.cart.length == 0) {
+    if (checkout.cart.length === 0) {
       window.location = "/";
     }
   }, [checkout.cart]);

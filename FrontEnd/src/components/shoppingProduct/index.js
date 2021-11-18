@@ -76,4 +76,4 @@ const ShoppingProduct = ({ obj }) => {
   );
 };
 
-export default Sh
+export default ShoppingProduct;
